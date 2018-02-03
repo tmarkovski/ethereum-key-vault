@@ -46,14 +46,7 @@ let main argv =
     // If running local geth, you can send the transaction directly.
     // Make sure RPC is running by setting --rpc flag
     // Ex: geth --datadir ~/.eth_test/ --maxpeers 0 --nodiscover --rpc console
-    //let rpcClient = RpcClient (new Uri("http://localhost:8485"))
-    //let rawTx = EthSendRawTransaction rpcClient
-
-    //async {
-    //    let! result = rawTx.SendRequestAsync(txHash)
-    //    return result
-    //} |> Async.RunSynchronously |> ignore
-    
-    printfn "%s" txHash
+    sendRawTransaction txHash
+    |> printfn "Transaction %s sent"
 
     0 // return an integer exit code

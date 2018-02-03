@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Extensions.fs" />
+    <None Include="Rpc.fs" />
     <Compile Include="KeyVault.fs" />
     <Compile Include="OfflineTransaction.fs" />
     <Compile Include="Program.fs" />
