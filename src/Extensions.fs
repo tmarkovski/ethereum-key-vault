@@ -6,6 +6,7 @@ open System.Threading.Tasks
 open System.Collections.Generic
 open Microsoft.Azure.KeyVault
 open Org.BouncyCastle.Crypto
+open Nethereum.Util
 
 /// Implements an extension method that overloads the standard
 /// 'Bind' of the 'async' builder. The new overload awaits on 
@@ -19,6 +20,8 @@ type AuthenticationCallback = KeyVaultClient.AuthenticationCallback
 type BigInt = Org.BouncyCastle.Math.BigInteger
 
 let toList<'a> (collection:'a seq) = new List<'a>(collection)
+
+let etherToWei (i:bigint) = UnitConversion.Convert.ToWei(i, UnitConversion.EthUnit.Ether)
 
 let toHex (buffer:byte array) =
     buffer 
