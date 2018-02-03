@@ -25,8 +25,10 @@ let main argv =
     // Define amount to send and nonce
     // Nonce must mutch the total transaction count for that address
     // Ex: In geth console check 'eth.getTransactionCount("alice's address")'
-    let amount = etherToWei (bigint 1)
+    // Or using the Rpc wrapper:
+    // getTransactionCount (aliceKey |> getAddress) + any pending transactions by alice
     let nonce = bigint 0
+    let amount = etherToWei (bigint 1)
 
     // Get the unsigned message array
     let message = 
