@@ -9,14 +9,11 @@ open Microsoft.Azure.KeyVault.WebKey
 open Org.BouncyCastle.Crypto.Digests
 open Org.BouncyCastle.Crypto
 
-let vaultUri = "..."
-let clientId = "..."
-let clientSecret = "..."
 
 let defaultKeyParams = NewKeyParameters(Kty = "EC-HSM", CurveName = "SECP256K1", KeyOps = toList [ "sign"; "verify" ])
 
 let getAccessToken (authority:string) (resource:string) (scope:string) =    
-    let clientCredential = new ClientCredential(clientId, clientSecret)
+    let clientCredential = new ClientCredential(Config.clientId, Config.clientSecret)
     let context = new AuthenticationContext(authority, TokenCache.DefaultShared)
     async {
         let! result = context.AcquireTokenAsync(resource, clientCredential)
@@ -30,13 +27,13 @@ let client =
 
 let createKey name keyParams =
     async {
-        let! result = client.CreateKeyAsync(vaultUri, name, parameters = keyParams)
+        let! result = client.CreateKeyAsync(Config.vaultUri, name, parameters = keyParams)
         return result
     } |> Async.RunSynchronously
 
 let getKey name = 
     async {
-        let! result = client.GetKeyAsync(vaultUri, keyName = name)
+        let! result = client.GetKeyAsync(Config.vaultUri, keyName = name)
         return result
     } |> Async.RunSynchronously
 

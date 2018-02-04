@@ -1,9 +1,4 @@
-﻿// Learn more about F# at http://fsharp.org
-
-open System
-open EthereumKeyVault
-open Nethereum.JsonRpc.Client
-open Nethereum.RPC.Eth.Transactions
+﻿open EthereumKeyVault
 
 [<EntryPoint>]
 let main argv =
@@ -23,7 +18,7 @@ let main argv =
     printfn "Bob's address: %s" (getAddress bobKey)
 
     // Define amount to send and nonce
-    // Nonce must mutch the total transaction count for that address
+    // Nonce must match the total transaction count for that address
     // Ex: In geth console check 'eth.getTransactionCount("alice's address")'
     // Or using the Rpc wrapper:
     // getTransactionCount (aliceKey |> getAddress) + any pending transactions by alice

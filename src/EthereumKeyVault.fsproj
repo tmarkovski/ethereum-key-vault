@@ -4,8 +4,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Config.fs" />
     <Compile Include="Extensions.fs" />
-    <None Include="Rpc.fs" />
+    <Compile Include="Rpc.fs" />
     <Compile Include="KeyVault.fs" />
     <Compile Include="OfflineTransaction.fs" />
     <Compile Include="Program.fs" />

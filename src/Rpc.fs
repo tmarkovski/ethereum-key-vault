@@ -5,7 +5,7 @@ open System
 open Nethereum.JsonRpc.Client
 open Nethereum.RPC.Eth.Transactions
 
-let rpcClient = RpcClient (new Uri("http://localhost:8485"))
+let rpcClient = RpcClient (Uri Config.rpcHost)
 
 let sendRawTransaction txHash =
     async {
