@@ -1,4 +1,4 @@
-This is a sample code repo for amy articles on Ethereum and Azure Key Vault
+This is a sample code repo for my articles on Ethereum and Azure Key Vault
 
 - [Ethereum with Azure Key Vault. Part 1 – Securing keys](https://tomislav.tech/2018/01/31/securing-ethereum-keys-with-azure-key-vault/)
 
